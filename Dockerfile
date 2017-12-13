@@ -3,3 +3,5 @@ LABEL maintainer "unicorn research Ltd."
 
 RUN apt-get update && apt-get install -y  git zip \
     && rm -rf /var/lib/apt/lists/*
+
+RUN a2enmod rewrite expires
