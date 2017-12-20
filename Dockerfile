@@ -4,7 +4,7 @@ LABEL maintainer "unicorn research Ltd."
 RUN apt-get update && apt-get install -y git zip \
 	    libfreetype6-dev \
 	    libjpeg62-turbo-dev \
-	    libpng12-dev \
+	    libpng-dev \
 	    libmemcached-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
