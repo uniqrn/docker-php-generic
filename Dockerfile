@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y git zip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install gd pdo_mysql mbstring
-RUN pecl install memcached-2.2.0 \
+RUN pecl install memcached-3.0.4 \
 && docker-php-ext-enable memcached
 
 RUN a2enmod rewrite expires
