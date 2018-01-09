@@ -16,7 +16,7 @@ RUN pecl install msgpack \
 && docker-php-ext-enable msgpack
 
 RUN curl -L -O https://bitbucket.org/wkhtmltopdf/wkhtmltopdf/downloads/wkhtmltox-0.13.0-alpha-7b36694_linux-jessie-amd64.deb
-RUN dpkg -i wkhtmltox-0.13.0-alpha-7b36694_linux-jessie-amd64.deb && :
+RUN dpkg -i wkhtmltox-0.13.0-alpha-7b36694_linux-jessie-amd64.deb || :
 RUN apt-get -f install
 
 RUN a2enmod rewrite expires
