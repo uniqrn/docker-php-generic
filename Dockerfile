@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y git zip \
 	    libgmp-dev libmcrypt-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install gd gmp pdo_mysql mbstring mcrypt mysqli opcache
+RUN docker-php-ext-install gd gmp pdo_mysql mbstring mysqli opcache
 RUN pecl install memcached-3.0.4 \
 && docker-php-ext-enable memcached
 RUN pecl install msgpack \
