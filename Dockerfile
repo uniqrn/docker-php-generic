@@ -1,7 +1,7 @@
 FROM php:7.0-apache
 LABEL maintainer "unicorn research Ltd."
 
-RUN apt-get update && apt-get install -y git zip \
+RUN apt-get update && apt-get install -y --no-install-recommends git zip \
 	    libfreetype6-dev \
 	    libjpeg62-turbo-dev \
 	    libpng-dev \
