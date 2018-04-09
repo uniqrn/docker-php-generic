@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends git zip \
 	    libgmp-dev libmcrypt-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install gd gmp pdo_mysql mbstring mysqli opcache zip exif
+RUN docker-php-ext-install gmp pdo_mysql mbstring mcrypt mysqli opcache zip exif
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/freetype2 --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install gd
 RUN pecl install memcached-3.0.4 \
 && docker-php-ext-enable memcached
 RUN pecl install msgpack \
